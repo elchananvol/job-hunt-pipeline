@@ -84,7 +84,7 @@ Then start the app with one command from the repository root:
 python -m uvicorn server.server:app --port 8000
 ```
 
-On Windows, `py -m uvicorn server.server:app --port 8000` works too. Open **<http://127.0.0.1:8000/>**. FastAPI serves the API and the built React files from `ui/dist/` on the same port. You only need to rerun `npm run build` inside `ui/` after changing the UI or updating its dependencies.
+Open **<http://127.0.0.1:8000/>**. FastAPI serves the API and the built React files from `ui/dist/` on the same port. You only need to rerun `npm run build` inside `ui/` after changing the UI or updating its dependencies.
 
 ## Use the pipeline
 
