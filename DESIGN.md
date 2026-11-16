@@ -52,4 +52,4 @@ CV generation writes Markdown under `personal_files/cv_generated/`, renders a PD
 - There is no authentication or authorization layer. The server is intended for local use, not public hosting.
 - The Docker image runs the web app. Agent tools and skill files are used from the host checkout.
 
-`jobsworm_jobs/` is a separate side project. It and dependency directories such as `node_modules/` are outside the published application.
+Dependency directories such as `node_modules/` and generated build output are excluded from Git.

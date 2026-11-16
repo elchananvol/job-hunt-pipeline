@@ -1,6 +1,5 @@
-# Local candidate data, job database, and side projects
+# Local candidate data and job database
 /personal_files/
-/jobsworm_jobs/
 /db/*
 !/db/.gitkeep
 /jobs.db

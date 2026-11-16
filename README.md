@@ -86,8 +86,6 @@ python -m uvicorn server.server:app --port 8000
 
 On Windows, `py -m uvicorn server.server:app --port 8000` works too. Open **<http://127.0.0.1:8000/>**. FastAPI serves the API and the built React files from `ui/dist/` on the same port. You only need to rerun `npm run build` inside `ui/` after changing the UI or updating its dependencies.
 
-**Why the older instructions used two terminals:** `npm run dev` starts Vite on port 5173 for live UI updates, while FastAPI runs on port 8000. That is optional for UI development. If you want hot reload, run `python -m uvicorn server.server:app --reload --port 8000` in one terminal and `cd ui && npm run dev` in another, then open **<http://localhost:5173>**. Vite proxies `/api` and `/files` to FastAPI. A fresh clone has no `ui/dist/` because build output is ignored by Git, so the one-terminal command serves only API routes until you build the UI.
-
 ## Use the pipeline
 
 1. **Fetch or add jobs.** Use the **Fetch** tab and choose a search term, sites, location, and limits. Or use **Manual entry** for a posting you already have. The CLI equivalent is `python -m server.fetch_jobs --search "software engineer" --location "israel"`; run `python -m server.fetch_jobs --help` for all options.
@@ -112,13 +110,17 @@ The same `skills/` files are the source of truth for **Codex, Claude Code, OpenC
 | `docs/screenshots/` | README screenshots |
 | `DESIGN.md` | Architecture and stage design |
 
-`jobsworm_jobs/` is a separate local side project and is excluded from this app and Git. `node_modules/`, build output, databases, and generated files are local artifacts; install dependencies with `npm ci` and `pip` rather than committing them.
+Dependency folders and build output are excluded from Git. Install dependencies using the setup commands above.
 
-## Privacy before publishing a fork
+## Local data
 
-This repository starts from a clean history and excludes `personal_files/`, `db/` data, and `jobsworm_jobs/` from commits. Keep those paths private when contributing. **Git ignore rules do not erase files already committed in a fork's history.** Choose a license if you want others to reuse the code. Do not expose this local web app directly to the internet; it has no login layer.
+Candidate profiles, CV source notes, feedback, and generated CVs are stored in `personal_files/`. Jobs and application history are stored in `db/jobs.db`. Both are excluded from Git; back them up to preserve your work. The app is designed for personal use on your own machine and has no login system.
 
-## Development checks
+## Development
+
+For automatic UI updates while editing, run `python -m uvicorn server.server:app --reload --port 8000` from the repository root and `npm run dev` from `ui/` in a second terminal. Open <http://localhost:5173>.
+
+Run the fetcher tests and UI build:
 
 ```sh
 python tests/test_paged_checkpoints.py
@@ -127,3 +129,7 @@ cd ui && npm run build
 ```
 
 See [`DESIGN.md`](DESIGN.md) for the architecture and data flow.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
