@@ -26,7 +26,7 @@ The app does **not** submit applications. You apply on the employer's site and r
 
 ## Requirements
 
-- Python 3.12 and Node.js 20.19+ (or 22.12+) for local development; Git is required because `python-jobspy` is installed from GitHub.
+- Python 3.12 for a local run, plus Node.js 20.19+ (or 22.12+) to build the UI once or change it later. Git is required because `python-jobspy` is installed from GitHub.
 - Or Docker with Docker Compose to run the web app in one container.
 - A coding agent such as OpenCode, Codex, Claude Code, or Antigravity for the optional AI scoring and CV steps. Use your own model/account; the app does not configure one.
 
@@ -55,7 +55,7 @@ docker compose up --build
 
 Open **<http://localhost:8000>**. Docker mounts `./db` and `./personal_files`, so the database and candidate files remain on your machine. To run the AI helper scripts from an agent on the host, also install the Python dependencies as shown in Option B. Docker builds the UI and serves it through FastAPI; you do not need a separate `npm` command for this option.
 
-### Option B: local development
+### Option B: run locally in one terminal
 
 Create a virtual environment and install Python dependencies from the repository root:
 
@@ -63,22 +63,30 @@ Create a virtual environment and install Python dependencies from the repository
 python -m venv .venv
 ```
 
-Activate it with `.venv\Scripts\Activate.ps1` in PowerShell or `source .venv/bin/activate` on macOS/Linux, then run:
+Activate it with `.venv\Scripts\Activate.ps1` in PowerShell or `source .venv/bin/activate` on macOS/Linux, then install the backend dependencies:
 
 ```sh
 python -m pip install -r requirements.txt
-python -m uvicorn server.server:app --reload --port 8000
 ```
 
-In a **second terminal**, start the UI:
+On a fresh clone, build the UI once:
 
 ```sh
 cd ui
 npm ci
-npm run dev
+npm run build
+cd ..
 ```
 
-Open **<http://localhost:5173>**. The Vite dev server proxies `/api` and `/files` to the backend on port 8000. If the UI says the backend is unreachable, check the first terminal.
+Then start the app with one command from the repository root:
+
+```sh
+python -m uvicorn server.server:app --port 8000
+```
+
+On Windows, `py -m uvicorn server.server:app --port 8000` works too. Open **<http://127.0.0.1:8000/>**. FastAPI serves the API and the built React files from `ui/dist/` on the same port. You only need to rerun `npm run build` inside `ui/` after changing the UI or updating its dependencies.
+
+**Why the older instructions used two terminals:** `npm run dev` starts Vite on port 5173 for live UI updates, while FastAPI runs on port 8000. That is optional for UI development. If you want hot reload, run `python -m uvicorn server.server:app --reload --port 8000` in one terminal and `cd ui && npm run dev` in another, then open **<http://localhost:5173>**. Vite proxies `/api` and `/files` to FastAPI. A fresh clone has no `ui/dist/` because build output is ignored by Git, so the one-terminal command serves only API routes until you build the UI.
 
 ## Use the pipeline
 

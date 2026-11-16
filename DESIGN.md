@@ -46,7 +46,8 @@ CV generation writes Markdown under `personal_files/cv_generated/`, renders a PD
 
 ## Runtime and deployment boundary
 
-- Local development: Vite on port 5173 proxies API and file requests to FastAPI on port 8000.
+- Local run: FastAPI serves the built `ui/dist/` and API on port 8000. A fresh clone needs one `npm ci` and `npm run build` before this works.
+- Optional UI development: Vite on port 5173 proxies API and file requests to FastAPI on port 8000 for live updates.
 - Docker Compose: the multi-stage image builds the UI and FastAPI serves it on port 8000; `db/` and `personal_files/` are bind mounted.
 - There is no authentication or authorization layer. The server is intended for local use, not public hosting.
 - The Docker image runs the web app. Agent tools and skill files are used from the host checkout.

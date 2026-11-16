@@ -511,8 +511,8 @@ def get_file(rel_path: str) -> FileResponse:
     return FileResponse(target)
 
 
-# ---------------------------------------------------------------- UI (served from the same origin in Docker)
-# ui/dist exists only after `npm run build` (baked into the Docker image).
-# Local dev keeps using `npm run dev` (Vite on :5173, proxied to this API).
+# ---------------------------------------------------------------- UI (served from the same origin when built)
+# ui/dist is created by `npm run build` locally or baked into the Docker image.
+# `npm run dev` is optional for live UI updates on :5173, proxied to this API.
 if UI_DIR.is_dir():
     app.mount("/", StaticFiles(directory=UI_DIR, html=True), name="ui")
