@@ -1,0 +1,12 @@
+# One-command run: backend + UI on http://localhost:8000
+# SQLite (db/) and CVs/lessons (personal_files/) are bind-mounted so data
+# survives image rebuilds. The AI sidecar (opencode skills + ai_helpers/)
+# keeps working from the host against the same ./db/jobs.db file.
+services:
+  app:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./db:/app/db
+      - ./personal_files:/app/personal_files

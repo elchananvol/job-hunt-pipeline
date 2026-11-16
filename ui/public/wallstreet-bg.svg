@@ -1,0 +1,187 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#7DD3FC"/>
+      <stop offset="0.45" stop-color="#BAE6FD"/>
+      <stop offset="0.72" stop-color="#FEF9C3"/>
+      <stop offset="1" stop-color="#FDE68A"/>
+    </linearGradient>
+    <linearGradient id="glass" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#E0F2FE"/>
+      <stop offset="1" stop-color="#93C5FD"/>
+    </linearGradient>
+    <linearGradient id="road" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#CBD5E1"/>
+      <stop offset="1" stop-color="#94A3B8"/>
+    </linearGradient>
+  </defs>
+
+  <!-- sky -->
+  <rect width="1600" height="900" fill="url(#sky)"/>
+
+  <!-- sun -->
+  <circle cx="1330" cy="150" r="90" fill="#FDE047" opacity="0.95"/>
+  <circle cx="1330" cy="150" r="120" fill="#FEF08A" opacity="0.45"/>
+
+  <!-- clouds -->
+  <g fill="#FFFFFF" opacity="0.9">
+    <ellipse cx="250" cy="140" rx="90" ry="32"/>
+    <ellipse cx="320" cy="125" rx="70" ry="28"/>
+    <ellipse cx="800" cy="90" rx="100" ry="30"/>
+    <ellipse cx="880" cy="110" rx="70" ry="24"/>
+    <ellipse cx="1100" cy="200" rx="80" ry="26"/>
+  </g>
+
+  <!-- distant skyline -->
+  <g opacity="0.55">
+    <rect x="40" y="280" width="90" height="380" fill="#BFDBFE"/>
+    <rect x="150" y="220" width="110" height="440" fill="#93C5FD"/>
+    <rect x="280" y="300" width="80" height="360" fill="#BFDBFE"/>
+    <rect x="1150" y="240" width="110" height="420" fill="#93C5FD"/>
+    <rect x="1280" y="300" width="90" height="360" fill="#BFDBFE"/>
+    <rect x="1390" y="230" width="120" height="430" fill="#93C5FD"/>
+  </g>
+
+  <!-- main Wall Street buildings left + right -->
+  <g>
+    <!-- left tower -->
+    <rect x="60" y="340" width="220" height="360" rx="6" fill="#1E3A8A"/>
+    <rect x="60" y="340" width="220" height="360" rx="6" fill="url(#glass)" opacity="0.35"/>
+    <g fill="#FEF9C3" opacity="0.95">
+      <rect x="80" y="365" width="36" height="28" rx="3"/>
+      <rect x="126" y="365" width="36" height="28" rx="3"/>
+      <rect x="172" y="365" width="36" height="28" rx="3"/>
+      <rect x="218" y="365" width="36" height="28" rx="3"/>
+      <rect x="80" y="405" width="36" height="28" rx="3"/>
+      <rect x="126" y="405" width="36" height="28" rx="3"/>
+      <rect x="172" y="405" width="36" height="28" rx="3"/>
+      <rect x="218" y="405" width="36" height="28" rx="3"/>
+      <rect x="80" y="445" width="36" height="28" rx="3"/>
+      <rect x="126" y="445" width="36" height="28" rx="3"/>
+      <rect x="172" y="445" width="36" height="28" rx="3"/>
+      <rect x="218" y="445" width="36" height="28" rx="3"/>
+    </g>
+    <rect x="120" y="290" width="100" height="50" fill="#1E3A8A"/>
+    <text x="170" y="322" text-anchor="middle" font-family="Arial,sans-serif" font-size="22" font-weight="bold" fill="#FDE047">BANK</text>
+
+    <!-- NYSE-style column building center-left -->
+    <rect x="310" y="400" width="260" height="300" fill="#F8FAFC"/>
+    <rect x="310" y="400" width="260" height="44" fill="#0F172A"/>
+    <text x="440" y="430" text-anchor="middle" font-family="Arial,sans-serif" font-size="24" font-weight="bold" fill="#FFFFFF" letter-spacing="3">WALL ST</text>
+    <g fill="#CBD5E1">
+      <rect x="330" y="460" width="28" height="180"/>
+      <rect x="375" y="460" width="28" height="180"/>
+      <rect x="420" y="460" width="28" height="180"/>
+      <rect x="465" y="460" width="28" height="180"/>
+      <rect x="510" y="460" width="28" height="180"/>
+    </g>
+    <polygon points="310,400 440,340 570,400" fill="#E2E8F0"/>
+    <rect x="425" y="360" width="30" height="30" fill="#FDE047"/>
+
+    <!-- right towers -->
+    <rect x="1020" y="330" width="220" height="370" rx="6" fill="#0EA5E9"/>
+    <rect x="1020" y="330" width="220" height="370" rx="6" fill="#0C4A6E" opacity="0.35"/>
+    <g fill="#ECFEFF" opacity="0.95">
+      <rect x="1040" y="355" width="38" height="30" rx="3"/>
+      <rect x="1088" y="355" width="38" height="30" rx="3"/>
+      <rect x="1136" y="355" width="38" height="30" rx="3"/>
+      <rect x="1184" y="355" width="38" height="30" rx="3"/>
+      <rect x="1040" y="397" width="38" height="30" rx="3"/>
+      <rect x="1088" y="397" width="38" height="30" rx="3"/>
+      <rect x="1136" y="397" width="38" height="30" rx="3"/>
+      <rect x="1184" y="397" width="38" height="30" rx="3"/>
+    </g>
+    <!-- stock ticker -->
+    <rect x="1020" y="470" width="220" height="44" fill="#020617"/>
+    <text x="1130" y="498" text-anchor="middle" font-family="Arial,sans-serif" font-size="22" font-weight="bold" fill="#4ADE80">▲ AAPL +2.4%  TSLA +5.1%</text>
+
+    <rect x="1270" y="370" width="200" height="330" rx="6" fill="#F59E0B"/>
+    <rect x="1270" y="370" width="200" height="330" rx="6" fill="#92400E" opacity="0.25"/>
+    <g fill="#FFFBEB">
+      <rect x="1290" y="395" width="36" height="30" rx="3"/>
+      <rect x="1336" y="395" width="36" height="30" rx="3"/>
+      <rect x="1382" y="395" width="36" height="30" rx="3"/>
+    </g>
+    <!-- US flag -->
+    <rect x="1340" y="280" width="60" height="36" fill="#EF4444"/>
+    <rect x="1340" y="280" width="60" height="6" fill="#FFFFFF"/>
+    <rect x="1340" y="292" width="60" height="6" fill="#FFFFFF"/>
+    <rect x="1340" y="304" width="60" height="6" fill="#FFFFFF"/>
+    <rect x="1340" y="280" width="26" height="20" fill="#1E40AF"/>
+    <line x1="1370" y1="316" x2="1370" y2="370" stroke="#78350F" stroke-width="5"/>
+  </g>
+
+  <!-- street -->
+  <rect x="0" y="690" width="1600" height="210" fill="url(#road)"/>
+  <g fill="#FFFFFF" opacity="0.9">
+    <rect x="80" y="785" width="90" height="14" rx="7"/>
+    <rect x="250" y="785" width="90" height="14" rx="7"/>
+    <rect x="420" y="785" width="90" height="14" rx="7"/>
+    <rect x="590" y="785" width="90" height="14" rx="7"/>
+    <rect x="920" y="785" width="90" height="14" rx="7"/>
+    <rect x="1090" y="785" width="90" height="14" rx="7"/>
+    <rect x="1260" y="785" width="90" height="14" rx="7"/>
+    <rect x="1430" y="785" width="90" height="14" rx="7"/>
+  </g>
+
+  <!-- charging bull (simplified, bright bronze) -->
+  <g transform="translate(760,600)">
+    <ellipse cx="0" cy="80" rx="130" ry="18" fill="#000" opacity="0.15"/>
+    <path d="M -100 20 Q -110 -30 -60 -35 L -40 -20 L -20 -35 Q 40 -45 70 -10 L 90 30 L 70 65 L -70 65 Z" fill="#D97706"/>
+    <path d="M -100 20 Q -115 5 -105 -10" stroke="#FEF3C7" stroke-width="8" fill="none" stroke-linecap="round"/>
+    <path d="M 70 -10 Q 90 -5 90 30" stroke="#FEF3C7" stroke-width="8" fill="none" stroke-linecap="round"/>
+    <circle cx="-55" cy="-10" r="5" fill="#1F2937"/>
+    <path d="M -90 60 L -95 85 L -75 85 L -65 60 Z" fill="#92400E"/>
+    <path d="M 50 60 L 55 85 L 75 85 L 70 60 Z" fill="#92400E"/>
+  </g>
+
+  <!-- === woman sitting with laptop (foreground right) === -->
+  <g transform="translate(1180,430)">
+    <ellipse cx="120" cy="330" rx="150" ry="22" fill="#000" opacity="0.14"/>
+    <!-- bench -->
+    <rect x="-40" y="250" width="320" height="20" rx="10" fill="#78350F"/>
+    <rect x="-20" y="270" width="16" height="70" fill="#451A03"/>
+    <rect x="240" y="270" width="16" height="70" fill="#451A03"/>
+    <!-- legs (jeans) -->
+    <path d="M 90 210 L 60 300 L 90 300 L 120 215 Z" fill="#2563EB"/>
+    <path d="M 125 212 L 150 295 L 180 288 L 160 205 Z" fill="#1D4ED8"/>
+    <!-- shoes -->
+    <ellipse cx="75" cy="308" rx="28" ry="12" fill="#F8FAFC" stroke="#0F172A" stroke-width="3"/>
+    <ellipse cx="168" cy="300" rx="28" ry="12" fill="#F8FAFC" stroke="#0F172A" stroke-width="3"/>
+    <!-- torso : bright coral top -->
+    <path d="M 70 110 Q 115 95 160 110 L 155 215 Q 115 228 75 215 Z" fill="#FB7185"/>
+    <path d="M 70 110 Q 55 150 45 185" stroke="#FDA4AF" stroke-width="22" stroke-linecap="round" fill="none"/>
+    <path d="M 160 110 Q 180 145 195 175" stroke="#FDA4AF" stroke-width="22" stroke-linecap="round" fill="none"/>
+    <!-- arms to laptop -->
+    <path d="M 55 180 Q 110 200 150 190" stroke="#FECDD3" stroke-width="18" stroke-linecap="round" fill="none"/>
+    <path d="M 190 170 Q 170 195 140 192" stroke="#FECDD3" stroke-width="18" stroke-linecap="round" fill="none"/>
+    <!-- head -->
+    <circle cx="115" cy="62" r="34" fill="#FFDDBB"/>
+    <!-- hair : long dark brown -->
+    <path d="M 78 55 Q 80 10 118 8 Q 156 10 154 58 L 162 130 Q 145 118 142 85 L 130 90 L 115 70 L 95 90 L 85 115 Q 70 100 78 55 Z" fill="#3F2A1D"/>
+    <circle cx="104" cy="62" r="4" fill="#1F2937"/>
+    <circle cx="128" cy="62" r="4" fill="#1F2937"/>
+    <path d="M 105 78 Q 116 86 128 78" stroke="#9C4A2F" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <!-- laptop on lap -->
+    <g transform="translate(95,175) rotate(-8)">
+      <rect x="0" y="0" width="110" height="72" rx="6" fill="#0F172A"/>
+      <rect x="6" y="6" width="98" height="60" rx="4" fill="#38BDF8"/>
+      <rect x="6" y="6" width="98" height="60" rx="4" fill="#E0F2FE" opacity="0.35"/>
+      <text x="55" y="32" text-anchor="middle" font-family="Arial,sans-serif" font-size="13" font-weight="bold" fill="#052e16">▲ +12%</text>
+      <rect x="14" y="40" width="82" height="6" rx="3" fill="#FFFFFF" opacity="0.9"/>
+      <rect x="14" y="50" width="55" height="6" rx="3" fill="#FDE047" opacity="0.95"/>
+      <rect x="-10" y="72" width="130" height="10" rx="5" fill="#94A3B8"/>
+    </g>
+    <!-- coffee cup -->
+    <g transform="translate(230,225)">
+      <rect x="0" y="0" width="28" height="34" rx="4" fill="#FFFFFF" stroke="#0EA5E9" stroke-width="3"/>
+      <path d="M 28 8 Q 42 8 40 20 Q 38 30 26 28" stroke="#0EA5E9" stroke-width="3" fill="none"/>
+    </g>
+  </g>
+
+  <!-- birds -->
+  <g stroke="#0C4A6E" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.7">
+    <path d="M 620 160 Q 632 148 644 160 Q 656 148 668 160"/>
+    <path d="M 700 200 Q 710 190 720 200 Q 730 190 740 200"/>
+  </g>
+</svg>

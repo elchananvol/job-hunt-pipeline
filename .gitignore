@@ -1,0 +1,22 @@
+# Local candidate data, job database, and side projects
+/personal_files/
+/jobsworm_jobs/
+/db/*
+!/db/.gitkeep
+/jobs.db
+/temp/
+
+# Dependencies and build output
+node_modules/
+.opencode/node_modules/
+ui/dist/
+.venv/
+venv/
+
+# Python and editor caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.DS_Store
+.idea/
+.vscode/
